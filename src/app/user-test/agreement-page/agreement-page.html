@@ -1,0 +1,20 @@
+<div class="container">
+
+  <app-page-one
+    *ngIf="currentPage === 1"
+    (pageOneAccepted)="fromPage($event)">
+  </app-page-one>
+
+  <app-page-two
+    *ngIf="currentPage === 2"
+    [course]="selectedCourse"
+    (pageOneAccepted)="fromPage($event)">
+  </app-page-two>
+
+  <app-start-exam
+    *ngIf="currentPage === 3"
+    [courseId]="selectedCourse?.courseId ?? 0"
+    [selectedCourse]="selectedCourse">
+  </app-start-exam>
+
+</div>
